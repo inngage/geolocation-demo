@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "474436234642",
+    "firebase_url": "https://inngagetutorialfcm.firebaseio.com",
+    "project_id": "inngagetutorialfcm",
+    "storage_bucket": "inngagetutorialfcm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:474436234642:android:96e9f4b8017f3ef3",
+        "android_client_info": {
+          "package_name": "br.com.inngage.tutorialfcm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "474436234642-on1cqk53ul1taimbcgjq2hkmuhjs4djq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUjflon1WF_krVhQMeThGKSBSjHEja_lg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
