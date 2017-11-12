@@ -12,7 +12,8 @@ import br.com.inngage.sdk.InngageIntentService;
 import br.com.inngage.sdk.InngagePermissionUtil;
 import br.com.inngage.sdk.InngageServiceUtils;
 import br.com.inngage.sdk.InngageUtils;
-
+import org.json.JSONObject;
+import org.json.JSONException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
     }
 
@@ -40,12 +42,26 @@ public class MainActivity extends AppCompatActivity {
      * Handle Inngage subscription process
      */
     private void handleSubscription() {
+
+        JSONObject jsonCustomField = new JSONObject();
+
+        try {
+            jsonCustomField.put("primeiro_nome", "Joaquim");
+            jsonCustomField.put("cidade", "São Paulo");
+            jsonCustomField.put("estado", "SP");
+
+        } catch (JSONException e) {
+
+            e.printStackTrace();
+        }
+
         InngageIntentService.startInit(
                 this,
                 InngageConstants.inngageAppToken,
-                "user03@teste.com",
+                "user02@inngage.com.br",
                 InngageConstants.inngageEnvironment,
-                InngageConstants.googleMessageProvider);
+                InngageConstants.googleMessageProvider,
+                jsonCustomField);
     }
 
     /**
@@ -53,8 +69,12 @@ public class MainActivity extends AppCompatActivity {
      */
     private void handleLocation() {
 
-        if (InngageUtils.hasM() && !(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
-                && ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)) {
+        if (InngageUtils.hasM() && !(ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
+                && ContextCompat.checkSelfPermission(
+                        this,
+                Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)) {
 
             askPermissions();
 
@@ -73,14 +93,16 @@ public class MainActivity extends AppCompatActivity {
      */
     public void askPermissions() {
         mBothPermissionRequest =
-                InngagePermissionUtil.with(this).request(android.Manifest.permission.ACCESS_COARSE_LOCATION, android.Manifest.permission.ACCESS_FINE_LOCATION).onResult(
+                InngagePermissionUtil.with(this).request(
+                        android.Manifest.permission.ACCESS_COARSE_LOCATION,
+                        android.Manifest.permission.ACCESS_FINE_LOCATION).onResult(
                         new GrantPermission() {
                             @Override
                             protected void call(int requestCode, String[] permissions, int[] grantResults) {
 
-                                if (grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
+                                if (grantResults[0] == PackageManager.PERMISSION_GRANTED
+                                        && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
 
-                                    //startLocationService(LocationService.class);
                                     serviceUtils.startService(
                                             InngageConstants.updateInterval,
                                             InngageConstants.priorityAccuracy,
@@ -89,12 +111,14 @@ public class MainActivity extends AppCompatActivity {
 
                                 } else {
 
-                                    Toast.makeText(MainActivity.this, InngageConstants.LOCATION_NOT_FOUND, Toast.LENGTH_LONG).show();
+                                    Toast.makeText(
+                                            MainActivity.this,
+                                            InngageConstants.LOCATION_NOT_FOUND,
+                                            Toast.LENGTH_LONG).show();
                                 }
                             }
 
                         }).ask(InngageConstants.PERMISSION_ACCESS_LOCATION_CODE);
-
     }
 
     /**

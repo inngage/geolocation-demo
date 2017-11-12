@@ -11,7 +11,7 @@ interface InngageConstants {
     String googleMessageProvider = "FCM";
     int updateInterval = 60000;
     int priorityAccuracy = 104;
-    int displacement = 100;
+    int displacement = 250;
     int PERMISSION_ACCESS_LOCATION_CODE = 99;
     String LOCATION_NOT_FOUND = "Não foi possível obter a localização do usuário";
 }
