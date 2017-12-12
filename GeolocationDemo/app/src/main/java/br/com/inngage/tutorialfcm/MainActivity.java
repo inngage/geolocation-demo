@@ -46,9 +46,15 @@ public class MainActivity extends AppCompatActivity {
         JSONObject jsonCustomField = new JSONObject();
 
         try {
-            jsonCustomField.put("primeiro_nome", "Joaquim");
-            jsonCustomField.put("cidade", "São Paulo");
-            jsonCustomField.put("estado", "SP");
+            //jsonCustomField.put("primeiro_nome", "Joaquim");
+            //jsonCustomField.put("cidade", "São Paulo");
+            //jsonCustomField.put("estado", "SP");
+            jsonCustomField.put("nome", "Jose");
+            jsonCustomField.put("email", "user02@inngage.com.br");
+            jsonCustomField.put("telefone", "99999-9999");
+            jsonCustomField.put("dataRegistro", "2017-11-16");
+            jsonCustomField.put("dataNascimento", "1960-01-01");
+
 
         } catch (JSONException e) {
 
@@ -153,3 +159,5 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
+
+

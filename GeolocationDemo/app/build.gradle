@@ -32,7 +32,7 @@ dependencies {
     compile 'com.google.firebase:firebase-messaging:11.0.1'
     compile 'com.google.android.gms:play-services:11.0.1'
 
-    compile 'br.com.inngage.sdk:inngage-lib:2.0.0'
+    compile 'br.com.inngage.sdk:inngage-lib:2.1.0'
     testCompile 'junit:junit:4.12'
 }
 apply plugin: 'com.google.gms.google-services'

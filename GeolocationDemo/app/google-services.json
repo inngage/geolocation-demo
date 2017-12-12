@@ -1,4 +1,4 @@
-{
+/*{
   "project_info": {
     "project_number": "474436234642",
     "firebase_url": "https://inngagetutorialfcm.firebaseio.com",
@@ -22,6 +22,48 @@
       "api_key": [
         {
           "current_key": "AIzaSyBUjflon1WF_krVhQMeThGKSBSjHEja_lg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}*/
+{
+  "project_info": {
+    "project_number": "378887776700",
+    "firebase_url": "https://zenpet-51863.firebaseio.com",
+    "project_id": "zenpet-51863",
+    "storage_bucket": "zenpet-51863.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378887776700:android:2e384f77170bfcb4",
+        "android_client_info": {
+          "package_name": "br.com.inngage.tutorialfcm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "378887776700-irug4d04p5ofcidqrevlnotr0ej85cbg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqjgAm7lcjA8d7EQvSeO3_o2_15hC4SEc"
         }
       ],
       "services": {

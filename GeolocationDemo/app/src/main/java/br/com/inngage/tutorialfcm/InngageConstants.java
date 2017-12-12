@@ -6,8 +6,8 @@ package br.com.inngage.tutorialfcm;
 
 interface InngageConstants {
 
-    String inngageAppToken = "6df458626a19396e9050b4c418e3a94e";
-    String inngageEnvironment = "dev";
+    String inngageAppToken = "87dea4418a017a2953e3a7b05660161a";
+    String inngageEnvironment = "prod";
     String googleMessageProvider = "FCM";
     int updateInterval = 60000;
     int priorityAccuracy = 104;
